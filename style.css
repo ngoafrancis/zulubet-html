@@ -1,106 +1,97 @@
 body {
-    font-family: 'Inter', sans-serif;
-    background: #f5f7fa;
-    margin: 0;
-    padding: 0;
-    color: #222;
-}
-
-header {
-    text-align: center;
-    padding: 20px 10px;
-    background: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    padding: 15px;
 }
 
 h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #0a3d62;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
-#updated-time {
-    color: #444;
-    font-size: 0.9rem;
+.updated {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
 }
 
-.table-container {
-    margin: 20px auto;
-    width: 95%;
+.table-wrapper {
     overflow-x: auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
+    font-size: 14px;
+    background: white;
 }
 
-thead {
-    background: #0a3d62;
-    color: white;
-}
-
-thead th {
-    padding: 12px;
-    text-align: left;
-    font-weight: 600;
-}
-
-tbody tr {
-    border-bottom: 1px solid #eee;
-}
-
-tbody tr:hover {
-    background: #f1f9ff;
-    transition: 0.2s;
-}
-
-td {
-    padding: 12px 10px;
-}
-
-/* Prediction Color Badges */
-.badge {
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    color: white;
-    display: inline-block;
-}
-
-.win { background: #27ae60; }     /* Green */
-.draw { background: #f1c40f; color: #000; } /* Yellow */
-.lose { background: #c0392b; }     /* Red */
-
-/* Match Column (bold teams) */
-.match {
-    font-weight: 600;
-}
-
-/* FOOTER */
-footer {
+th, td {
+    border: 1px solid #555;
+    padding: 6px 8px;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: #777;
 }
 
-/* Mobile Optimization */
-@media (max-width: 600px) {
-    h1 { font-size: 1.3rem; }
+.header-top {
+    background: #6b7b8c;
+    color: white;
+    font-weight: bold;
+}
 
-    td, th {
-        padding: 8px;
-        font-size: 0.85rem;
-    }
+.header-sub {
+    background: #8595a7;
+    color: white;
+    font-weight: bold;
+}
 
-    .badge {
-        padding: 4px 6px;
-        font-size: 0.75rem;
-    }
+.date-col {
+    width: 110px;
+}
+
+.matches-col {
+    width: 260px;
+}
+
+.prediction-col {
+    width: 220px;
+}
+
+.odds-col {
+    width: 180px;
+}
+
+.ft-col {
+    width: 90px;
+}
+
+a.team-link {
+    color: #003cff;
+    text-decoration: none;
+}
+
+.team-flag {
+    width: 18px;
+    height: 12px;
+    margin-right: 4px;
+}
+
+.percent {
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.percent.green {
+    background: #00ff00;
+}
+
+.tip {
+    font-weight: bold;
+    color: #008000;
+}
+
+.loading {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
 }
