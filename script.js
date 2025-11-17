@@ -1,38 +1,50 @@
+const url = "https://raw.githubusercontent.com/ngoafrancis/zulubet-html/main/zulubet_predictions.json";
+
 async function loadPredictions() {
     try {
-        const response = await fetch("https://raw.githubusercontent.com/ngoafrancis/zulubet-html/main/zulubet_predictions.json");
-        const data = await response.json();
+        const res = await fetch(url);
+        const data = await res.json();
 
-        document.getElementById("updated-time").textContent =
+        document.getElementById("updatedTime").innerHTML =
             "Updated: " + new Date().toLocaleString();
 
-        const tbody = document.querySelector("#predictions-table tbody");
+        const tbody = document.getElementById("tableBody");
         tbody.innerHTML = "";
 
         data.forEach(match => {
-            // Determine TIP badge color
-            let badgeClass = "";
-            if (match.tip === "1") badgeClass = "win";
-            else if (match.tip === "X") badgeClass = "draw";
-            else badgeClass = "lose";
+            const max = Math.max(match.home_percent, match.draw_percent, match.away_percent);
 
-            const row = `
+            function colorCell(p) {
+                return `<span class="percent ${p === max ? 'green' : ''}">${p}%</span>`;
+            }
+
+            tbody.innerHTML += `
                 <tr>
                     <td>${match.date}</td>
-                    <td class="match">${match.home} vs ${match.away}</td>
-                    <td>${match.home_percent}%</td>
-                    <td>${match.draw_percent}%</td>
-                    <td>${match.away_percent}%</td>
-                    <td><span class="badge ${badgeClass}">${match.tip}</span></td>
+
+                    <td>
+                        <img src="${match.flag}" class="team-flag">
+                        <a class="team-link" href="#">${match.home} - ${match.away}</a>
+                    </td>
+
+                    <td>${colorCell(match.home_percent)}</td>
+                    <td>${colorCell(match.draw_percent)}</td>
+                    <td>${colorCell(match.away_percent)}</td>
+
+                    <td class="tip">${match.tip}</td>
+
+                    <td>${match.home_odd}</td>
+                    <td>${match.draw_odd}</td>
+                    <td>${match.away_odd}</td>
+
+                    <td><span class="percent green">${match.result}</span></td>
                 </tr>
             `;
-
-            tbody.insertAdjacentHTML("beforeend", row);
         });
 
-    } catch (error) {
-        document.getElementById("updated-time").textContent = "Failed to load predictions.";
-        console.error("Error loading predictions:", error);
+    } catch (e) {
+        document.getElementById("tableBody").innerHTML =
+            `<tr><td colspan="10" style="color:red;">Failed to load predictions.</td></tr>`;
     }
 }
 
