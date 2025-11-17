@@ -1,0 +1,106 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0a3d62;
+}
+
+#updated-time {
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.table-container {
+    margin: 20px auto;
+    width: 95%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+thead {
+    background: #0a3d62;
+    color: white;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background: #f1f9ff;
+    transition: 0.2s;
+}
+
+td {
+    padding: 12px 10px;
+}
+
+/* Prediction Color Badges */
+.badge {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+}
+
+.win { background: #27ae60; }     /* Green */
+.draw { background: #f1c40f; color: #000; } /* Yellow */
+.lose { background: #c0392b; }     /* Red */
+
+/* Match Column (bold teams) */
+.match {
+    font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    h1 { font-size: 1.3rem; }
+
+    td, th {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .badge {
+        padding: 4px 6px;
+        font-size: 0.75rem;
+    }
+}
