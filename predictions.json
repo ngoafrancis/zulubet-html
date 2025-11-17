@@ -1,0 +1,38 @@
+[
+    {
+        "date": "17-11, 02:15",
+        "match": "Central Cordoba de Santiago - Banfield",
+        "p1": 49,
+        "px": 31,
+        "p2": 20,
+        "tip": "1X",
+        "odds1": 2.59,
+        "oddsx": 2.73,
+        "odds2": 3.16,
+        "ft": "1:1"
+    },
+    {
+        "date": "17-11, 23:15",
+        "match": "Newell’s Old Boys - San Club",
+        "p1": 49,
+        "px": 19,
+        "p2": 32,
+        "tip": "1",
+        "odds1": 3.22,
+        "oddsx": 1.97,
+        "odds2": 2.93,
+        "ft": "2:1"
+    },
+    {
+        "date": "17-11, 15:20",
+        "match": "Boca Juniors - Tigre",
+        "p1": 36,
+        "px": 28,
+        "p2": 36,
+        "tip": "X",
+        "odds1": 2.70,
+        "oddsx": 2.51,
+        "odds2": 2.82,
+        "ft": "1:3"
+    }
+]
