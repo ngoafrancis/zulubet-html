@@ -1,97 +1,47 @@
 body {
-    background: #f5f5f5;
     font-family: Arial, sans-serif;
-    padding: 15px;
+    margin: 20px;
+    background: #f5f5f5;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 5px;
 }
 
-.updated {
+#updated {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 14px;
-    color: #333;
-}
-
-.table-wrapper {
-    overflow-x: auto;
+    color: #444;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
     background: white;
 }
 
-th, td {
-    border: 1px solid #555;
-    padding: 6px 8px;
-    text-align: center;
-}
-
-.header-top {
-    background: #6b7b8c;
-    color: white;
-    font-weight: bold;
-}
-
-.header-sub {
-    background: #8595a7;
-    color: white;
-    font-weight: bold;
-}
-
-.date-col {
-    width: 110px;
-}
-
-.matches-col {
-    width: 260px;
-}
-
-.prediction-col {
-    width: 220px;
-}
-
-.odds-col {
-    width: 180px;
-}
-
-.ft-col {
-    width: 90px;
-}
-
-a.team-link {
-    color: #003cff;
-    text-decoration: none;
-}
-
-.team-flag {
-    width: 18px;
-    height: 12px;
-    margin-right: 4px;
-}
-
-.percent {
-    padding: 3px 5px;
-    border-radius: 3px;
-}
-
-.percent.green {
-    background: #00ff00;
-}
-
-.tip {
-    font-weight: bold;
-    color: #008000;
-}
-
-.loading {
-    text-align: center;
+th {
+    background: #607d8b;
+    color: #fff;
     padding: 10px;
-    font-size: 16px;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background: #f1f1f1;
+}
+
+.ft-green {
+    background: #00ff00;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
 }

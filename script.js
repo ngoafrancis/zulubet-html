@@ -1,50 +1,36 @@
-const url = "https://raw.githubusercontent.com/ngoafrancis/zulubet-html/main/zulubet_predictions.json";
+document.getElementById("updated").innerText =
+    "Updated: " + new Date().toLocaleString();
 
 async function loadPredictions() {
     try {
-        const res = await fetch(url);
-        const data = await res.json();
-
-        document.getElementById("updatedTime").innerHTML =
-            "Updated: " + new Date().toLocaleString();
+        const response = await fetch("predictions.json"); // Or your API endpoint
+        const data = await response.json();
 
         const tbody = document.getElementById("tableBody");
         tbody.innerHTML = "";
 
-        data.forEach(match => {
-            const max = Math.max(match.home_percent, match.draw_percent, match.away_percent);
-
-            function colorCell(p) {
-                return `<span class="percent ${p === max ? 'green' : ''}">${p}%</span>`;
-            }
-
-            tbody.innerHTML += `
+        data.forEach(item => {
+            const row = `
                 <tr>
-                    <td>${match.date}</td>
-
-                    <td>
-                        <img src="${match.flag}" class="team-flag">
-                        <a class="team-link" href="#">${match.home} - ${match.away}</a>
-                    </td>
-
-                    <td>${colorCell(match.home_percent)}</td>
-                    <td>${colorCell(match.draw_percent)}</td>
-                    <td>${colorCell(match.away_percent)}</td>
-
-                    <td class="tip">${match.tip}</td>
-
-                    <td>${match.home_odd}</td>
-                    <td>${match.draw_odd}</td>
-                    <td>${match.away_odd}</td>
-
-                    <td><span class="percent green">${match.result}</span></td>
+                    <td>${item.date}</td>
+                    <td>${item.match}</td>
+                    <td>${item.p1}%</td>
+                    <td>${item.px}%</td>
+                    <td>${item.p2}%</td>
+                    <td>${item.tip}</td>
+                    <td>${item.odds1}</td>
+                    <td>${item.oddsx}</td>
+                    <td>${item.odds2}</td>
+                    <td class="ft-green">${item.ft}</td>
                 </tr>
             `;
+            tbody.innerHTML += row;
         });
 
-    } catch (e) {
+    } catch (err) {
+        console.error(err);
         document.getElementById("tableBody").innerHTML =
-            `<tr><td colspan="10" style="color:red;">Failed to load predictions.</td></tr>`;
+            `<tr><td colspan="10">Failed to load predictions.</td></tr>`;
     }
 }
 
